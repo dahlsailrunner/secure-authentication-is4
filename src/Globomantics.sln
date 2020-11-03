@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30626.31
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.IdentityServer", "Globomantics.IdentityServer\Globomantics.IdentityServer.csproj", "{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{A002AF8A-0F51-40C6-A324-856FD002108F}"
+	ProjectSection(SolutionItems) = preProject
+		nginx\id-local.crt = nginx\id-local.crt
+		nginx\id-local.globomantics.com.conf = nginx\id-local.globomantics.com.conf
+		nginx\id-local.key = nginx\id-local.key
+		nginx\id-local.pfx = nginx\id-local.pfx
+		nginx\nginx.local.conf = nginx\nginx.local.conf
+		nginx\nginx.local.Dockerfile = nginx\nginx.local.Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{668C8C5B-F373-41B3-AB28-F2874815767D}"
+	ProjectSection(SolutionItems) = preProject
+		sql\entrypoint.sh = sql\entrypoint.sh
+		sql\InitializeGlobomanticsDbAndUser.sql = sql\InitializeGlobomanticsDbAndUser.sql
+		sql\setup.sh = sql\setup.sh
+		sql\sql.Dockerfile = sql\sql.Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|x64.Build.0 = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Debug|x86.Build.0 = Debug|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|x64.ActiveCfg = Release|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|x64.Build.0 = Release|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|x86.ActiveCfg = Release|Any CPU
+		{557D4A0D-AE3F-40D6-9D4C-9E296EF45DB1}.Release|x86.Build.0 = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x64.Build.0 = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4FAFB9B-D89F-4B9A-8A8D-B177AFC3B6F4}
+	EndGlobalSection
+EndGlobal

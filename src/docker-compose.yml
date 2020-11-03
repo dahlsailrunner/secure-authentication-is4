@@ -1,0 +1,78 @@
+version: '3.7'
+
+services:
+  reverseproxy:
+    build:
+      context: .
+      dockerfile: nginx/nginx.local.Dockerfile
+    networks:
+      gateway:
+        aliases:
+          - "id-local.globomantics.com"          
+    ports:
+      - "44395:44395" 
+    restart: always
+
+  identityserver:
+    depends_on:
+      - reverseproxy 
+      - smtp4dev
+      - pgsql
+      - globsql
+      - seq
+    build:
+      context: .
+      dockerfile: Globomantics.IdentityServer/Dockerfile
+    networks:
+      - gateway
+    environment:
+      - ASPNETCORE_URLS=http://*:5000      
+    ports:
+      - "5003:5000"  
+    restart: always
+
+  smtp4dev:
+    image: rnwood/smtp4dev
+    restart: always
+    networks:
+      - gateway
+    ports:      
+      - '5013:80'  # Web interface      
+      - '2523:25'  # SMTP server      
+      - '144:143'  # IMAP server
+
+  seq:    
+    image: datalust/seq
+    restart: always
+    networks:
+      - gateway
+    ports:
+      - '5333:80'
+      - '5343:5341'
+    environment:
+      - ACCEPT_EULA=Y      
+
+  pgsql:
+    image: postgres
+    restart: always
+    networks:
+      - gateway
+    environment:
+      POSTGRES_PASSWORD: C0nt*inersAreAwe5ome!
+    ports:
+      - '5433:5432'  
+
+  globsql:
+    build:
+      context: .
+      dockerfile: sql/sql.Dockerfile
+    networks:
+      - gateway
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Sqlc0nt*inersFTW!
+    ports:
+      - "1435:1433"      
+
+networks:
+  gateway: {}
