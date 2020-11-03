@@ -90,7 +90,7 @@ namespace Globomantics.IdentityServer
                     options.Events.RaiseInformationEvents = true;
                     options.Events.RaiseFailureEvents = true;
                     options.Events.RaiseSuccessEvents = true;
-                    
+
                     options.AccessTokenJwtType = string.Empty;
                     options.EmitStaticAudienceClaim = true;
                     options.UserInteraction.LoginUrl = "/Account/Login";
@@ -98,12 +98,12 @@ namespace Globomantics.IdentityServer
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseNpgsql(connStr, sql => sql.MigrationsAssembly(migrationsAssembly));
+                        b.UseSqlServer(connStr, sql => sql.MigrationsAssembly(migrationsAssembly));
                 })
                 .AddOperationalStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseNpgsql(connStr, sql => sql.MigrationsAssembly(migrationsAssembly));
+                        b.UseSqlServer(connStr, sql => sql.MigrationsAssembly(migrationsAssembly));
                 })
                 .AddDeveloperSigningCredential()
                 .AddAspNetIdentity<CustomUser>();

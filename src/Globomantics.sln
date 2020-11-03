@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{668C8C5B-F37
 		sql\sql.Dockerfile = sql\sql.Dockerfile
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Core", "Globomantics.Core\Globomantics.Core.csproj", "{9A728620-C1F3-4E37-9B13-C674EB887BFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,18 @@ Global
 		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x64.Build.0 = Release|Any CPU
 		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x86.ActiveCfg = Release|Any CPU
 		{1B2056A9-B22C-422B-96F0-474FAEAC1AD8}.Release|x86.Build.0 = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|x64.Build.0 = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Debug|x86.Build.0 = Debug|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|x64.ActiveCfg = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|x64.Build.0 = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9A728620-C1F3-4E37-9B13-C674EB887BFF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

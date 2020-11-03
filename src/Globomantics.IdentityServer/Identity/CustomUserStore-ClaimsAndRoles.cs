@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
 using Globomantics.IdentityServer.Data;
+using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 
 namespace Globomantics.IdentityServer.Identity
@@ -24,8 +25,8 @@ namespace Globomantics.IdentityServer.Identity
             }
 
             claims.Add(user.LoginName == "kim@mars.com"
-                ? new Claim(ClaimTypes.Role, "admin")
-                : new Claim(ClaimTypes.Role, "general"));
+                ? new Claim(JwtClaimTypes.Role, "admin")
+                : new Claim(JwtClaimTypes.Role, "general"));
 
             claims.Add(new Claim("MfaEnabled", Convert.ToString(user.TwoFactorEnabled)));
 

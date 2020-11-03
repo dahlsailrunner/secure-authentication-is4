@@ -8,16 +8,15 @@ services:
     networks:
       gateway:
         aliases:
-          - "id-local.globomantics.com"          
-    ports:
-      - "44395:44395" 
+          - "id-local.globomantics.com"   
     restart: always
+    ports:
+      - "44395:44395"     
 
   identityserver:
     depends_on:
       - reverseproxy 
-      - smtp4dev
-      - pgsql
+      - smtp4dev      
       - globsql
       - seq
     build:
@@ -28,12 +27,10 @@ services:
     environment:
       - ASPNETCORE_URLS=http://*:5000      
     ports:
-      - "5003:5000"  
-    restart: always
+      - "5003:5000"      
 
   smtp4dev:
-    image: rnwood/smtp4dev
-    restart: always
+    image: rnwood/smtp4dev    
     networks:
       - gateway
     ports:      
@@ -51,16 +48,6 @@ services:
       - '5343:5341'
     environment:
       - ACCEPT_EULA=Y      
-
-  pgsql:
-    image: postgres
-    restart: always
-    networks:
-      - gateway
-    environment:
-      POSTGRES_PASSWORD: C0nt*inersAreAwe5ome!
-    ports:
-      - '5433:5432'  
 
   globsql:
     build:

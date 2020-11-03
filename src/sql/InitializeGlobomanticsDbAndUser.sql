@@ -152,9 +152,8 @@ GO
 ------------------------------------------
 USE master;
 CREATE LOGIN [globo_identityserver] WITH PASSWORD=N'SqlonLinux?!', DEFAULT_DATABASE=[Globomantics], CHECK_EXPIRATION=OFF, CHECK_POLICY=ON;
+EXEC sp_addsrvrolemember N'sysadmin', [globo_identityserver];
 GO
 USE Globomantics;
 CREATE USER [globo_identityserver] FOR LOGIN [globo_identityserver];
-EXEC sp_addrolemember N'db_datareader', [globo_identityserver];
-EXEC sp_addrolemember N'db_datawriter', [globo_identityserver];
-GRANT EXECUTE TO [globo_identityserver];
+EXEC sp_addrolemember N'db_owner', [globo_identityserver];

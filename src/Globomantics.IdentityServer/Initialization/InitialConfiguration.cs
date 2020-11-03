@@ -112,14 +112,13 @@ namespace Globomantics.IdentityServer.Initialization
                     ClientId = "interactive.confidential",
                     ClientName = "Interactive client (Code with PKCE)",
 
-                    RedirectUris = { "https://notused" },
+                    RedirectUris = { "https://localhost:44320/signin-oidc" },
                     PostLogoutRedirectUris = { "https://notused" },
 
                     ClientSecrets = { new Secret("secret".Sha256()) },
 
                     AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
-                    AllowedScopes = { "openid", "profile", "email", "api", "api.scope1", "api.scope2", "scope2" },
-
+                    AllowedScopes = { "openid", "profile", "glob_profile", "email", "api", "api.scope1", "api.scope2", "scope2" },
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.ReUse,
                     RefreshTokenExpiration = TokenExpiration.Sliding
@@ -202,6 +201,7 @@ namespace Globomantics.IdentityServer.Initialization
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
+                new IdentityResource("glob_profile", new List<string>{"MfaEnabled", "CompanyId"})
             };
         }
 
@@ -228,7 +228,7 @@ namespace Globomantics.IdentityServer.Initialization
                 new ApiResource("api", "Demo API")
                 {
                     ApiSecrets = { new Secret("secret".Sha256()) },
-
+                    UserClaims = {"MfaEnabled", "CompanyId"},
                     Scopes = { "api", "api.scope1", "api.scope2" }
                 },
 
