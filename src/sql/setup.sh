@@ -1,6 +1,2 @@
-# Wait for SQL Server to be started
-sleep 30s
-
-
-# Run the setup script to create the database
-/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P $SA_PASSWORD -d master -i InitializeGlobomanticsDbAndUser.sql
+# Wait for SQL Server to be started and then run the sql script
+./wait-for-it.sh globsql:1433 --timeout=0 --strict -- sleep 2s && /opt/mssql-tools/bin/sqlcmd -S localhost -i InitializeGlobomanticsDbAndUser.sql -U SA -P $MSSQL_SA_PASSWORD

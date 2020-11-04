@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using IdentityModel;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
@@ -201,7 +202,7 @@ namespace Globomantics.IdentityServer.Initialization
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
-                new IdentityResource("glob_profile", new List<string>{"MfaEnabled", "CompanyId"})
+                new IdentityResource("glob_profile", new List<string>{"MfaEnabled", "CompanyId", JwtClaimTypes.Role})
             };
         }
 

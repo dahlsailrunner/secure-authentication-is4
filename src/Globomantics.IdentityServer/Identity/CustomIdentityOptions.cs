@@ -1,4 +1,5 @@
 ﻿using System;
+using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
@@ -21,6 +22,11 @@ namespace Globomantics.IdentityServer.Identity
             options.Lockout.MaxFailedAccessAttempts = 3;  // 5
             options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); 
             options.Lockout.AllowedForNewUsers = true;
+
+            options.ClaimsIdentity.RoleClaimType = JwtClaimTypes.Role;
+            options.ClaimsIdentity.UserIdClaimType = JwtClaimTypes.Subject;
+            options.ClaimsIdentity.UserNameClaimType = JwtClaimTypes.Name;
+            options.ClaimsIdentity.EmailClaimType = JwtClaimTypes.Email;
         }
     }
 }

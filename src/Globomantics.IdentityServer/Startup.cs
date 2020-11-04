@@ -47,11 +47,13 @@ namespace Globomantics.IdentityServer
                 {
                     opts.LoginPath = "/Account/Login";
                     opts.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                    opts.LogoutPath = "/Account/Logout";
                 });
                 o.ExternalCookie.Configure(opts =>
                 {
                     opts.LoginPath = "/Account/Login";
                     opts.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                    opts.LogoutPath = "/Account/Logout";
                 });
             });
 
@@ -94,6 +96,7 @@ namespace Globomantics.IdentityServer
                     options.AccessTokenJwtType = string.Empty;
                     options.EmitStaticAudienceClaim = true;
                     options.UserInteraction.LoginUrl = "/Account/Login";
+                    options.UserInteraction.LogoutUrl = "/Account/Logout";
                 })
                 .AddConfigurationStore(options =>
                 {

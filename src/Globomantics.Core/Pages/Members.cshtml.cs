@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Globomantics.Core.Pages
 {
-    //[Authorize(Roles = "admin")]
-    [Authorize(Policy = "MfaRequired")]
+    [Authorize(Roles = "admin")]
+    //[Authorize(Policy = "MfaRequired")]
     //[RequiredRight("ViewMembers")]
     //[RequiresMfaChallenge]
     public class MembersModel : PageModel

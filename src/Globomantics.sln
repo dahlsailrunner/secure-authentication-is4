@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{668C8C5B-F37
 		sql\InitializeGlobomanticsDbAndUser.sql = sql\InitializeGlobomanticsDbAndUser.sql
 		sql\setup.sh = sql\setup.sh
 		sql\sql.Dockerfile = sql\sql.Dockerfile
+		sql\wait-for-it.sh = sql\wait-for-it.sh
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Core", "Globomantics.Core\Globomantics.Core.csproj", "{9A728620-C1F3-4E37-9B13-C674EB887BFF}"

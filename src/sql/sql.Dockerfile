@@ -4,6 +4,7 @@ ARG PROJECT_DIR=/tmp/globomantics
 RUN mkdir -p $PROJECT_DIR
 WORKDIR $PROJECT_DIR
 COPY sql/InitializeGlobomanticsDbAndUser.sql ./
+COPY sql/wait-for-it.sh ./
 COPY sql/entrypoint.sh ./
 COPY sql/setup.sh ./
 

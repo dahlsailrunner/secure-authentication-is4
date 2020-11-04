@@ -55,9 +55,9 @@ services:
       dockerfile: sql/sql.Dockerfile
     networks:
       - gateway
-    environment:
+    environment:      
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Sqlc0nt*inersFTW!
+      - MSSQL_SA_PASSWORD=Sqlc0ntainersFTW!
     ports:
       - "1435:1433"      
 

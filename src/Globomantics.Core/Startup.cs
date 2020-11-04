@@ -64,6 +64,7 @@ namespace Globomantics.Core
 
                     options.ClaimActions.MapJsonKey("MfaEnabled", "MfaEnabled");
                     options.ClaimActions.MapJsonKey("CompanyId", "CompanyId");
+                    options.ClaimActions.MapJsonKey("role", "role");
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
