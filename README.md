@@ -98,6 +98,10 @@ The `docker-compose.yml` file defines all of the services we want running when w
 
 All of the above items use a network defined here called `gateway` (name doesn't matter) just so it's easy for them all to talk to one another.  
 
+Here is a visual representation of the `docker-compose` environment along with an abbreviated version of the yaml file:
+
+![Docker-Compose](DockerCompose-IdentityServer.png)
+
 # nginx / Reverse Proxy / SSL notes
 As noted above in the Docker Compose notes, the `reverseproxy` is one of the services defined.  Here's the yaml for it:
 
