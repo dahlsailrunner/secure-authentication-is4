@@ -26,7 +26,6 @@ namespace Globomantics.IdentityServer.Identity
             options.ClaimsIdentity.RoleClaimType = JwtClaimTypes.Role;
             options.ClaimsIdentity.UserIdClaimType = JwtClaimTypes.Subject;
             options.ClaimsIdentity.UserNameClaimType = JwtClaimTypes.Name;
-            options.ClaimsIdentity.EmailClaimType = JwtClaimTypes.Email;
         }
     }
 }
